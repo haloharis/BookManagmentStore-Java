@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.StoreController">
+   <children>
+      <Text fill="#093670" layoutX="431.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paper Trails" wrappingWidth="238.9166259765625">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Text>
+    <AnchorPane layoutX="6.0" layoutY="101.0" minHeight="0.0" minWidth="0.0" prefHeight="391.0" prefWidth="148.0">
+         <children>
+            <Button fx:id="NewSaleBn" layoutX="7.0" layoutY="145.0" mnemonicParsing="false" onAction="#initializeSale" prefHeight="39.0" prefWidth="131.0" text="New Sale" textFill="#093670">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="ReturnBookBn" layoutX="7.0" layoutY="282.0" mnemonicParsing="false" onAction="#returnBook" prefHeight="39.0" prefWidth="131.0" text="Return Book" textFill="#093670">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Text fill="#093670" layoutX="28.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="SaleAnchorPane" layoutX="161.0" layoutY="101.0" minHeight="0.0" minWidth="0.0" prefHeight="637.0" prefWidth="879.0">
+         <children>
+            <Label layoutX="25.0" layoutY="48.0" prefHeight="23.0" prefWidth="33.0" text="ISBN:" />
+            <TableView fx:id="POSTable" layoutX="487.0" layoutY="27.0" prefHeight="500.0" prefWidth="387.0">
+               <columns>
+                  <TableColumn fx:id="pColItemNum" prefWidth="52.0" text="Sr. No" />
+                  <TableColumn fx:id="pColTitle" prefWidth="185.0" text="Title" />
+                  <TableColumn fx:id="pColQuantity" prefWidth="68.0" text="Quantity" />
+                  <TableColumn fx:id="pColPrice" prefWidth="79.0" text="Price" />
+               </columns>
+            </TableView>
+            <Button fx:id="EnterBookBn" layoutX="72.0" layoutY="454.0" mnemonicParsing="false" onAction="#enterBookDetails" prefHeight="30.0" prefWidth="113.0" text="Enter book" textFill="#093670" />
+            <Text fill="#093670" layoutX="29.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Details">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <VBox layoutX="29.0" layoutY="271.0" prefHeight="96.0" prefWidth="58.0" spacing="4.0">
+               <children>
+                  <Text fill="#093670" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#093670" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#093670" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#093670" strokeType="OUTSIDE" strokeWidth="0.0" text="Author:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox layoutX="85.0" layoutY="271.0" prefHeight="96.0" prefWidth="164.0" spacing="4.0">
+               <children>
+                  <Label fx:id="pisbn" minWidth="-Infinity" prefHeight="20.0" prefWidth="161.0" text="isbn" textFill="#7c7070">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ptitle" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="20.0" prefWidth="162.0" text="title" textFill="#7c7070">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="pauthor" layoutX="10.0" layoutY="34.0" minWidth="-Infinity" prefHeight="20.0" prefWidth="158.0" text="author" textFill="#7c7070">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="pprice" layoutX="10.0" layoutY="58.0" prefHeight="20.0" prefWidth="66.0" text="0.00" textFill="#7c7070">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+            <Label layoutX="24.0" layoutY="101.0" text="Quantity:" />
+            <ComboBox fx:id="ISBNField" layoutX="95.0" layoutY="45.0" prefHeight="30.0" prefWidth="289.0" />
+            <TextField fx:id="SaleItemQuantity" layoutX="95.0" layoutY="95.0" prefHeight="30.0" prefWidth="281.0" />
+            <Text fill="#093670" layoutX="273.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="saleTotal" layoutX="347.0" layoutY="577.0" text="0.00" textFill="#093670">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="CompleteSaleBn" layoutX="746.0" layoutY="588.0" mnemonicParsing="false" onAction="#endSale" prefHeight="30.0" prefWidth="113.0" text="Complete Sale" textFill="#093670" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ReturnAnchorPane" layoutX="164.0" layoutY="101.0" minHeight="0.0" minWidth="0.0" prefHeight="678.0" prefWidth="879.0" visible="false">
+         <children>
+            <Label layoutX="37.0" layoutY="52.0" prefHeight="23.0" prefWidth="58.0" text="Sale ID:" textFill="#093670">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Text fill="#093670" layoutX="859.0" layoutY="668.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sale Details:" />
+            <TableView fx:id="ReturnTable" layoutX="31.0" layoutY="124.0" prefHeight="507.0" prefWidth="689.0">
+               <columns>
+                  <TableColumn fx:id="rColItemNum" prefWidth="52.0" text="Sr. No" />
+                  <TableColumn fx:id="rColTitle" prefWidth="185.0" text="Title" />
+                  <TableColumn fx:id="rColQuantity" prefWidth="68.0" text="Quantity" />
+                  <TableColumn fx:id="rColPrice" prefWidth="79.0" text="Price" />
+               </columns>
+            </TableView>
+            <Button fx:id="ConfirmReturnBn" layoutX="752.0" layoutY="622.0" mnemonicParsing="false" onAction="#confirmReturn" text="Confirm Return" textFill="#093670" />
+            <ComboBox fx:id="SaleIDField" layoutX="95.0" layoutY="49.0" prefWidth="150.0" />
+            <Text layoutX="334.0" layoutY="9.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POS" wrappingWidth="42.765625">
+               <font>
+                  <Font name="Times New Roman" size="21.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Button fx:id="POSBackBtn" layoutX="7.0" layoutY="-1.0" mnemonicParsing="false" onAction="#POSGoBack" text="Back" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Line endX="-99.99998474121094" endY="627.3333129882812" layoutX="260.0" layoutY="102.0" startX="-100.0" startY="21.0" />
+      <Text fill="#093670" layoutX="991.0" layoutY="789.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select book to return">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

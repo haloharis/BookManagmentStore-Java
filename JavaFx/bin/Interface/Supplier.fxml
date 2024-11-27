@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.StoreController">
+   <top>
+      <VBox prefHeight="107.0" prefWidth="653.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <Button fx:id="SupplierBackBtn" mnemonicParsing="false" onAction="#SupplierGoBack" text="Back" />
+            <Label text="Suppliers" textFill="#093670">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="250.0" top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="220.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="SupplierSearchField" onAction="#ClickSupplierSearchField" prefHeight="25.0" prefWidth="452.0" promptText="  Search">
+               <VBox.margin>
+                  <Insets right="350.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+      </VBox>
+   </top>
+   <bottom>
+      <VBox prefHeight="59.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <Label fx:id="SupplierStatusLabel" text="Manage Supplier" textFill="#093670">
+               <VBox.margin>
+                  <Insets left="1000.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="607.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Button fx:id="AddSupplierBtn" layoutX="39.0" layoutY="13.0" mnemonicParsing="false" onAction="#addSupplier" prefHeight="37.0" prefWidth="121.0" text="ADD SUPPLIER" textFill="#093670">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="ViewSupplierBtn" layoutX="128.0" layoutY="69.0" mnemonicParsing="false" onAction="#viewSupplier" prefHeight="37.0" prefWidth="121.0" text="VIEW SUPPLIER" textFill="#093670">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="EditSupplierBtn" layoutX="199.0" layoutY="13.0" mnemonicParsing="false" onAction="#editSupplier" prefHeight="37.0" prefWidth="121.0" text="EDIT SUPPLIER" textFill="#093670">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="CurrentSupplierAnchorPane" layoutX="22.0" layoutY="135.0" prefHeight="487.0" prefWidth="307.0">
+               <children>
+                  <TextField fx:id="SupplierNameField" layoutX="15.0" layoutY="140.0" prefHeight="25.0" prefWidth="285.0" promptText="Enter Name of Supplier" />
+                  <Label layoutX="14.0" layoutY="119.0" text="Name:" textFill="#093670">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="64.0" text="Supplier ID:" textFill="#093670">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="supplierIDField" editable="false" layoutX="14.0" layoutY="84.0" prefHeight="25.0" prefWidth="286.0" promptText="Enter ID of Supplier" />
+                  <Label fx:id="headingSupplierAnchor" layoutX="105.0" layoutY="4.0" text="ADDING BOOK:" textFill="#093670">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="16.0" layoutY="176.0" text="Contact Info:" textFill="#093670">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="contactInfoField" layoutX="15.0" layoutY="196.0" prefHeight="25.0" prefWidth="286.0" promptText="Enter Contact of Supplier" />
+                  <Label fx:id="addbooklabel" layoutX="17.0" layoutY="244.0" text="Add Books:" textFill="#093670">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addSupplierBooksBtn" layoutX="17.0" layoutY="263.0" mnemonicParsing="false" onAction="#AddSupplierBooks" prefHeight="25.0" prefWidth="284.0" text="ADD BOOKS" textFill="#093670">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button fx:id="suppliercurrentBtn" layoutX="119.0" layoutY="598.0" mnemonicParsing="false" onAction="#completeSupplierAction" prefHeight="37.0" prefWidth="121.0" text="ADD BOOK" textFill="#093670">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="CurrentSupplierBookAnchorPane" layoutX="34.0" layoutY="134.0" prefHeight="455.0" prefWidth="291.0" visible="false">
+               <children>
+                  <TextField fx:id="titleField1" editable="false" layoutX="15.0" layoutY="135.0" prefHeight="25.0" prefWidth="258.0" />
+                  <Label layoutX="14.0" layoutY="119.0" text="Title:" textFill="#093670" />
+                  <Label layoutX="15.0" layoutY="64.0" text="ISBN:" textFill="#093670" />
+                  <Label fx:id="headingAnchor" layoutX="105.0" layoutY="30.0" text="ADDING BOOK:" textFill="#093670">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="176.0" text="Author:" textFill="#093670" />
+                  <TextField fx:id="authorField1" editable="false" layoutX="16.0" layoutY="192.0" prefHeight="25.0" prefWidth="258.0" />
+                  <Label layoutX="17.0" layoutY="233.0" text="Publisher:" textFill="#093670" />
+                  <TextField fx:id="publisherField1" editable="false" layoutX="16.0" layoutY="248.0" prefHeight="25.0" prefWidth="258.0" />
+                  <TextField fx:id="priceField1" editable="false" layoutX="16.0" layoutY="310.0" prefHeight="25.0" prefWidth="258.0" />
+                  <Label layoutX="19.0" layoutY="295.0" text="Price:" textFill="#093670" />
+                  <Button fx:id="addBookSupplierBtn" layoutX="31.0" layoutY="367.0" mnemonicParsing="false" onAction="#AddBookSupplier" prefHeight="23.0" prefWidth="107.0" text="ADD BOOK" textFill="#093670">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="backBtn" layoutX="151.0" layoutY="367.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="23.0" prefWidth="107.0" text="BACK" textFill="#093670">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="isbnField1" layoutX="17.0" layoutY="81.0" onAction="#AddBookForSupplier" prefHeight="25.0" prefWidth="257.0" promptText="Choose Book" />
+               </children>
+            </AnchorPane>
+            <Text fx:id="SuppplierINfoLabel" fill="#093670" layoutX="39.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="40.0" top="30.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox prefHeight="641.0" prefWidth="675.0">
+               <children>
+                  <TableView fx:id="SupplierTableView" prefHeight="298.0" prefWidth="675.0">
+                    <columns>
+                      <TableColumn fx:id="colSupplierID" prefWidth="132.6666578054428" text="Supplier ID" />
+                      <TableColumn fx:id="colSupplierName" prefWidth="161.3333740234375" text="Supplier Name" />
+                        <TableColumn fx:id="colContccInfo" prefWidth="363.33331298828125" text="Contact Info" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="SupplierBookSearchField" onAction="#ClickSupplierBookSearchField" prefHeight="25.0" prefWidth="452.0" promptText="  Search">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TableView fx:id="SupplierBookTableView" prefHeight="277.0" prefWidth="675.0">
+                    <columns>
+                      <TableColumn fx:id="colSupplierBookISBN" prefWidth="94.66665017604828" text="ISBN" />
+                      <TableColumn fx:id="colSupplierBookTitle" prefWidth="140.0" text="Title" />
+                        <TableColumn fx:id="colSupplierBookAuthor" prefWidth="130.0" text="Author" />
+                        <TableColumn fx:id="colSupplierBookPublisher" prefWidth="225.0" text="Publisher" />
+                        <TableColumn fx:id="colSupplierBookPrice" prefWidth="82.66671752929688" text="Price" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
